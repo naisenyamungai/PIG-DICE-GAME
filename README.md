@@ -11,8 +11,6 @@
 
 ## Project Overview
 
-![](https://github.com/naisenyamungai/Anita-s-Kitchen/blob/master/IMAGES/core.jpg)
-
 ## Technologies Used
 >The application was created using below technologies;
 >- HTML
