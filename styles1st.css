@@ -1,0 +1,406 @@
+body{
+    color:yellowgreen;
+    font-family: 'ZCOOL XiaoWei';
+}
+
+
+
+.game1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    background-image: url(Images/backgroundAF.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.header{
+    grid-column: span 3 / auto;
+    padding:40px;
+    display:block;
+    height:150px;  
+}
+
+.header h1{
+    text-align:center;
+}
+
+#PDG{
+    margin-right:40%;
+}
+.rules{
+    grid-column: span 3 / auto;
+    margin-left:25%;
+    background:rgba(0,0,0,0.0001);
+    color:yellowgreen;
+    width:700px;
+    border:2px solid white;
+    border-color:yellowgreen;
+    box-shadow:0px 0px 3px 3px grey;
+    margin-top:10px;
+   
+}
+
+.rules h3, h4{
+    text-align:center;
+    margin-bottom:20px;  
+}
+
+.rules p{
+margin-left:20px;
+font-size:20px;
+margin-bottom:20px;
+line-height: 20px;
+}
+
+.rules ul li {
+    font-size:16px;
+    line-height:23px;
+    }
+
+
+.playArea{ 
+    grid-column: span 3 / auto; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:1000px;
+}
+.scoreSheet{
+    grid-column: span 3 / auto;
+}
+
+.footer{
+    grid-column: span 3 / auto;
+    height:300px;
+}
+
+.newGame{
+    grid-column: span 3 / auto;
+    margin-left:45%;
+    width:100;
+    
+}
+
+.game2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    background-color:black;
+    
+}
+
+.game2 h3{
+    text-align: center;
+}
+
+.winner{
+    margin-left:45%;
+    height:100px;
+    margin-top:150px;
+}
+
+
+/*.rollHold{
+    margin-top:20px;
+}
+
+/*.roll{
+    margin-left:20px;
+ 
+}
+
+.hold{
+
+}*/
+
+.scoreSheet{
+    height:300px;
+}
+
+.footer p{
+    text-align:center;
+}
+
+.playersDetails{
+    margin-top:30px;
+}
+
+.player1, .player2, .rollHold{
+    height:300px;
+    width:400px;
+    border:2px solid white;
+    border-color:yellowgreen;
+    box-shadow:0px 0px 2px 2px grey;
+    
+}
+
+.player1 h2{
+    text-align:center;
+    font-weight: bold;
+}
+
+.player2 h2{
+    text-align:center;
+    font-weight: bold;
+}
+
+.clickable{
+    cursor: pointer;
+  }
+
+.clickable:hover {
+    text-decoration: underline;
+    color:white;
+  }
+
+.rollHold{
+  margin-left:4%;
+  padding:50px;
+}
+
+.roll .button {
+    background-color:grey;
+    color:yellowgreen;
+    height:50px; 
+    width:100px; 
+    font-size:26px;
+    border:1px solid yellowgreen;
+    margin-top:150px;
+    margin-right:20px;
+     
+    }
+
+.hold .button {
+        background-color:grey;
+        color:yellowgreen;
+        height:50px;
+        width:100px;  
+        font-size:26px;
+        border:1px solid yellowgreen;
+        margin-top:150px;
+        margin-left:150px;
+        
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image:url(Images/3dicegold.jpg);
+    background-position: center;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+.overlay-content h3{
+    font-size: 48px;
+
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 48px;
+    color: rgb(255,223,0);
+    display: block;
+    transition: 0.3s;
+  }
+  
+.overlay a:hover, .overlay a:focus {
+    color: white;
+  }
+  
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+.overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+}
+  
+#hamIcon{
+    color:yellowgreen;
+    margin-bottom:0px;
+    margin-right:20px;
+    width: 100px;
+    height: 100px;
+}
+
+
+#hamburgerMenu{
+    padding-top: 20px;
+    padding-left: 40px;
+
+}
+
+#icons{
+    padding-top:30px; 
+    margin-left:35%;
+    color:white;
+}
+
+#icons a {
+    position: relative;
+    width:60px;
+    height:60px;
+    display:block;
+    text-align:center;
+    margin:0 10px;
+    border-radius: 50%;
+    padding: 6px;
+    box-sizing: border-box;
+    text-decoration:none;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(0deg, #ddd, #fff);
+    transition: .5s;
+   }
+
+#icons a .fa {
+    width: 100%;
+    height:100%;
+    display:block;
+    background: linear-gradient(0deg, #fff, #ddd);
+    border-radius: 50%;
+    line-height: calc(60px - 12px);
+    font-size:24px;
+    color:black;
+    transition: .5s;
+   }
+
+#year p{
+    padding-top:50px;
+}
+
+.footer p{
+    font-size:16px;
+}
+
+/*Carousel styling
+
+#slideshow {
+	margin: 0 auto;
+	padding-top: 50px;
+	height: 600px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.slideshow-title {
+	font-family: 'Allerta Stencil';
+	font-size: 62px;
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 25%;
+	letter-spacing: 3px;
+	font-weight: 300;
+}
+
+.sub-heading {
+	padding-top: 50px;
+	font-size: 18px;
+} .sub-heading-two {
+	font-size: 15px;
+} .sub-heading-three {
+	font-size: 13px;
+} .sub-heading-four {
+	font-size: 11px;
+} .sub-heading-five {
+	font-size: 9px;
+} .sub-heading-six {
+	font-size: 7px;
+} .sub-heading-seven {
+	font-size: 5px;
+} .sub-heading-eight {
+	font-size: 3px;
+} .sub-heading-nine {
+	font-size: 1px;
+}
+
+.entire-content {
+	margin: auto;
+	width: 190px;
+	perspective: 1000px;
+	position: relative;
+	padding-top: 80px;
+}
+
+.content-carrousel {
+	width: 100%;
+	position: absolute;
+	float: right;
+	animation: rotar 15s infinite linear;
+	transform-style: preserve-3d;
+}
+
+.content-carrousel:hover {
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
+.content-carrousel figure {
+	width: 100%;
+	height: 120px;
+	border: 1px solid #3b444b;
+	overflow: hidden;
+	position: absolute;
+}
+
+.content-carrousel figure:nth-child(1) {
+	transform: rotateY(0deg) translateZ(200px); 
+} .content-carrousel figure:nth-child(2) {
+	transform: rotateY(40deg) translateZ(200px); 
+} .content-carrousel figure:nth-child(3) {
+	transform: rotateY(80deg) translateZ(200px); 
+} .content-carrousel figure:nth-child(4) {
+	transform: rotateY(120deg) translateZ(200px); 
+} .content-carrousel figure:nth-child(5) {
+	transform: rotateY(160deg) translateZ(200px); 
+} .content-carrousel figure:nth-child(6) {
+	transform: rotateY(200deg) translateZ(200px); 
+} .content-carrousel figure:nth-child(7) {
+	transform: rotateY(240deg) translateZ(200px); 
+}
+
+.shadow {
+    position: absolute;
+    box-shadow: 0px 0px 20px 0px #000;
+    border-radius: 1px;
+}
+
+.content-carrousel img {
+	image-rendering: auto;
+	transition: all 300ms;
+	width: 100%;
+	height: 100%;
+}
+
+.content-carrousel img:hover {
+	transform: scale(1.2);
+	transition: all 300ms;
+}
+
+@keyframes rotar {
+	from {
+		transform: rotateY(0deg);
+	} to {
+		transform: rotateY(360deg);
+	}
+}*/
+
