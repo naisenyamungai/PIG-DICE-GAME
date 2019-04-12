@@ -76,14 +76,11 @@ line-height: 20px;
 
 .newGame{
     grid-column: span 3 / auto;
-    text-align: center;
     background:rgba(0,0,0,0.5);
-    
+    margin-left:25%;   
 }
 
-.newGame h2{ 
-    text-align: center;  
-}
+
 
 
 .game2{
