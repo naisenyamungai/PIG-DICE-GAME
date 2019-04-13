@@ -17,30 +17,33 @@ function closeNav() {
 
 $(document).ready(function() {
   var p1 = new PigDice();
-  $("#rollDice").click(function() { 
+  $("#P1rollDice").click(function() { 
       p1.rollDice();
       $("#rollScore").text(p1.rollScore);
       $("#roundScore").text(p1.roundScore);
 
   });
-  $("#hold").click(function() {
+  $("#P1hold").click(function() {
       p1.holdDice();
       $("#totalScore").text(p1.totalScore);
-     
+      $("#P1rollDice").prop("disabled", true);
+      $("#P2rollDice").prop("disabled", false);     
   });
 });
 
 /*$(document).ready(function() {
 var p2 = new PigDice();
-$("#rollDice").click(function() { 
+$("#P2rollDice").click(function() { 
     p2.rollDice();
     $("#rollScore").text(p2.rollScore);
     $("#roundScore").text(p2.roundScore);
 });
-$("#hold").click(function() {
+$("#P2hold").click(function() {
     p2.holdDice();
     $("#totalScore").text(p2.totalScore);
     $("#rollDice").prop("disabled", true); 
+    $("#P2rollDice").prop("disabled", true);
+    $("#P1rollDice").prop("disabled", false); 
 });
 });*/
 
@@ -58,30 +61,9 @@ if(dice !== 1){
     this.roundScore += this.rollScore;
 }else{
     this.roundScore = 0;
-    $("#rollDice").prop("disabled", true); 
     }  
 }
 
 PigDice.prototype.holdDice = function(){
 this.totalScore += this.roundScore;
-$("#rollDice").prop("disabled", true);
-}
-
-
-function nextPlayer() {
-	//next player
-		var icons = document.getElementsByTagName('i');
-		for(i=0;i<icons.length;i++){
-			icons[i].classList.remove(Player1);
-		}
-		
-		Plaayer1 ===0 ? activePlayer = 1 : activePlayer = 0;
-		roundScore = 0;
-		
-		for(i=0;i<icons.length;i++){
-			icons[i].classList.add('color-' + activePlayer);
-		}
-		document.querySelector('.player-' + activePlayer + '-panel').classList.add('active-' + activePlayer);
-		document.querySelector('#current-0').textContent = '0';
-		document.querySelector('#current-1').textContent = '0';
 }

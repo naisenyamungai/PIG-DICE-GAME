@@ -66,22 +66,3 @@ PigDice.prototype.holdDice = function(){
 this.totalScore += this.roundScore;
 $("#rollDice").prop("disabled", true);
 }
-
-
-function nextPlayer() {
-	//next player
-		var icons = document.getElementsByTagName('i');
-		for(i=0;i<icons.length;i++){
-			icons[i].classList.remove(Player1);
-		}
-		
-		Plaayer1 ===0 ? activePlayer = 1 : activePlayer = 0;
-		roundScore = 0;
-		
-		for(i=0;i<icons.length;i++){
-			icons[i].classList.add('color-' + activePlayer);
-		}
-		document.querySelector('.player-' + activePlayer + '-panel').classList.add('active-' + activePlayer);
-		document.querySelector('#current-0').textContent = '0';
-		document.querySelector('#current-1').textContent = '0';
-}
