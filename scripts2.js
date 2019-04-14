@@ -16,9 +16,10 @@ function closeNav() {
 }
 
 $(document).ready(function() {
-  nextPlayer1()
+  nextPlayer1();
   $("#player1").click(function(){
     $("#rollDice").click(function(){
+      p1.rollDice();
       if(p1.rollScore === 1){
         $("#p1rollScore").text("Oops! You rolled 1");
         $("#p1roundScore").text("0");
@@ -43,7 +44,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  nextPlayer2()
+  nextPlayer2();
   $("#player2").click(function(){
     $("#rollDice").click(function() { 
       p2.rollDice();
@@ -93,7 +94,8 @@ var p2 = new PigDice();
 
 PigDice.prototype.rollDice = function(){
 var dice = Math.floor(Math.random()*6)+1;
-this.rollScore=dice; 
+this.rollScore = dice;
+this.roundScore += this.rollScore;
 }
 
 PigDice.prototype.holdDice = function(){

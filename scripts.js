@@ -16,31 +16,58 @@ function closeNav() {
 }
 
 $(document).ready(function() {
-  nextPlayer1();
   $("#player1").click(function(){
     $("#rollDice").click(function(){
       p1.rollDice();
-      $("#p1rollScore").text(p1.rollScore);
-      $("#p1roundScore").text(p1.roundScore);
+      if(p1.rollScore === 1){
+        $("#p1rollScore").text("Oops! You rolled 1");
+        $("#p1roundScore").text("0");
+        $("p1, #rollDice").prop("disabled", true);
+        $("p1, #hold").prop("disabled", true);
+      }else{
+        $("#p1rollScore").text(p1.rollScore);
+        $("#p1roundScore").text(p1.roundScore);
+        }
     });
     $("#hold").click(function() {
       p1.holdDice();
-      $("#p1totalScore").text(p1.totalScore);
+      if(p1.totalScore >= 100){
+        $("#p1totalScore").text("You are the WINNER !!!!");
+      }else{
+        $("#p1totalScore").text(p1.totalScore);
+        $("p1, #rollDice").prop("disabled", true);
+        $("p1, #hold").prop("disabled", true);
+      } 
     });
   });
 });
 
 $(document).ready(function() {
-  nextPlayer2();
   $("#player2").click(function(){
+    nextPlayer();
     $("#rollDice").click(function() { 
       p2.rollDice();
-      $("#p2rollScore").text(p2.rollScore);
-      $("#p2roundScore").text(p2.roundScore);
+      if(p2.rollScore === 1){
+        $("#p2rollScore").text("Oops! You rolled 1");
+        $("#p2roundScore").text("0");
+        $("p2, #rollDice").prop("disabled", true);
+        $("p2, #hold").prop("disabled", true);
+        nextPlayer();
+      }else{
+        $("#p2rollScore").text(p2.rollScore);
+        $("#p2roundScore").text(p2.roundScore);
+      }
     });
     $("#hold").click(function() {
       p2.holdDice();
-      $("#p2totalScore").text(p2.totalScore);
+      if(p2.totalScore >= 100){
+        $("#p2totalScore").text("You are the WINNER !!!!");
+      }else{
+        $("#p2totalScore").text(p2.totalScore);
+        $("p2, #rollDice").prop("disabled", true);
+        $("p2, #hold").prop("disabled", true);
+        nextPlayer();
+      } 
     });
   });
 });
@@ -68,28 +95,41 @@ var p2 = new PigDice();
 
 PigDice.prototype.rollDice = function(){
 var dice = Math.floor(Math.random()*6)+1;
-this.rollScore=dice; 
-if(dice !== 1){
-    this.roundScore += this.rollScore;
-}else{
-    this.roundScore = 0;
-    $("#rollDice").prop("disabled", true);
-    $("#hold").prop("disabled", true);
-    }
+this.rollScore=dice;
+this.roundScore += this.rollScore;
+nextPlayer();
+
 }
 
 PigDice.prototype.holdDice = function(){
 this.totalScore += this.roundScore;
-$("#rollDice").prop("disabled", true);
-$("#hold").prop("disabled", true);
+nextPlayer();
+
 }
 
-function nextPlayer2(){
-  $("p2, #rollDice").prop("disabled", false); 
-  $("p2, #hold").prop("disabled",false);
-}
+function nextPlayer(){
+  if("p1.#hold"){
+    $("p2, #rollDice").prop("disabled", false); 
+    $("p2, #hold").prop("disabled",false);
+    $("#p1rollScore").text("0");
+    $("#p1roundScore").text("0");
+   
+  }else if(p1.rollScore === 1) {
+    $("p2, #rollDice").prop("disabled", false); 
+    $("p2, #hold").prop("disabled",false);
+    $("#p1rollScore").text("0");
+    $("#p1roundScore").text("0");
+  }else if("p2.#hold"){
+    $("p1, #rollDice").prop("disabled", false); 
+    $("p1, #hold").prop("disabled",false);
+    $("#p2rollScore").text("0");
+    $("#p2roundScore").text("0");
+  }else if(p2.rollScore === 1){
+    $("p1, #rollDice").prop("disabled", false); 
+    $("p1, #hold").prop("disabled",false);
+    $("#p2rollScore").text("0");
+    $("#p2roundScore").text("0");
+  } 
+};
 
-function nextPlayer1(){
-  $("p1, #rollDice").prop("disabled", false); 
-  $("p1, #hold").prop("disabled",false);
-}
+
