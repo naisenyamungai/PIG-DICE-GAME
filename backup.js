@@ -16,10 +16,13 @@ function closeNav() {
 }
 
 $(document).ready(function() {
-  var p1 = new PigDice();
-  $("#rollDice").click(function() { 
-      p1.rollDice();
+  $("#P1rollDice").click(function() { 
+    player1.rollDice();
+    if(player1.dice !== 0){
       $("#rollScore").text(p1.rollScore);
+
+    }
+    $("#rollScore").text(p1.rollScore);
       $("#roundScore").text(p1.roundScore);
 
   });
@@ -31,7 +34,7 @@ $(document).ready(function() {
 });
 
 /*$(document).ready(function() {
-var p2 = new PigDice();
+var p2 = new Player();
 $("#rollDice").click(function() { 
     p2.rollDice();
     $("#rollScore").text(p2.rollScore);
@@ -45,24 +48,29 @@ $("#hold").click(function() {
 });*/
 
 /* Business Logic */
-function PigDice(rollScore, roundScore, totalScore){
+function Player(rollScore, roundScore, totalScore){
 this.rollScore = 0;
 this.roundScore =0;
 this.totalScore =0;
 }
 
-PigDice.prototype.rollDice = function(){
+var player1 = new Player();
+var player2 = new Player();
+
+Player.prototype.rollDice = function(){
 var dice = Math.floor(Math.random()*6)+1;
-this.rollScore=dice; 
-if(dice !== 1){
+this.rollScore=dice;
+this.roundScore += this.rollScore;
+/*if(dice !== 1){
     this.roundScore += this.rollScore;
 }else{
     this.roundScore = 0;
     $("#rollDice").prop("disabled", true); 
     }  
+}*/
+
+Player.prototype.holdDice = function(){
+this.totalScore += this.roundScore;
 }
 
-PigDice.prototype.holdDice = function(){
-this.totalScore += this.roundScore;
-$("#rollDice").prop("disabled", true);
-}
+/*$("#rollDice").prop("disabled", true);*/
