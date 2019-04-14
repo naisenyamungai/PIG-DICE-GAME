@@ -229,6 +229,7 @@ body{
     top: 0;
     left: 0;
     background-image:url(Images/golddice.jpg);
+    opacity:0.5px;
     background-position: center;
     overflow-x: hidden;
     transition: 0.5s;
@@ -330,33 +331,12 @@ body{
     font-size:16px;
 }
 
-/*Carousel styling*/
-
-/*.diceSlideShow{
-    background-color:rgba(0,0,0,0.0001);
-    padding:50px;
-}*/
-
-/*.carousel{
-    width:300px;
-    border:2px solid white;
-    border-color:rgb(255,223,0);
-    background:rgba(0,0,0,0.5);
-    box-shadow:0px 0px 2px 2px grey;
-}*/
-
 #slideshow {
 	margin: 0 auto;
 	padding-top: 80px;
 	height: 400px;
 	width: 100%;
     box-sizing: border-box;
-    /*border:2px solid white;
-    border-color:rgb(255,223,0);
-    background:rgba(0,0,0,0.5);
-    box-shadow:0px 0px 2px 2px grey;*/
-
-    /*background-color:rgba(0,0,0,0.0001);*/
 }
 
 .slideshow-title {
