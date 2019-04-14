@@ -16,63 +16,53 @@ function closeNav() {
 }
 
 $(document).ready(function() {
-  $("#P1rollDice").click(function() { 
-    player1.rollDice();
-    if(player1.dice !== 0){
-      $("#rollScore").text(p1.rollScore);
-      $("#roundScore").text(p1.roundScore);
-    }else{
-
-    }
-    /*$("#rollScore").text(p1.rollScore);
-      $("#roundScore").text(p1.roundScore);*/
+  var p1 = new PigDice();
+  $("#rollDice").click(function() { 
+      p1.rollDice();
+      $("#p1rollScore").text(p1.rollScore);
+      $("#p1roundScore").text(p1.roundScore);
 
   });
   $("#hold").click(function() {
       p1.holdDice();
-      $("#totalScore").text(p1.totalScore);
+      $("#p1totalScore").text(p1.totalScore);
      
   });
 });
 
-/*$(document).ready(function() {
-var p2 = new Player();
+$(document).ready(function() {
+var p2 = new PigDice();
 $("#rollDice").click(function() { 
     p2.rollDice();
-    $("#rollScore").text(p2.rollScore);
-    $("#roundScore").text(p2.roundScore);
+    $("#p2rollScore").text(p2.rollScore);
+    $("#p2roundScore").text(p2.roundScore);
 });
 $("#hold").click(function() {
     p2.holdDice();
-    $("#totalScore").text(p2.totalScore);
-    $("#rollDice").prop("disabled", true); 
+    $("#p2totalScore").text(p2.totalScore);
+    $("#p2rollDice").prop("disabled", true); 
+  });
 });
-});*/
 
 /* Business Logic */
-function Player(rollScore, roundScore, totalScore){
+function PigDice(rollScore, roundScore, totalScore){
 this.rollScore = 0;
 this.roundScore =0;
 this.totalScore =0;
 }
 
-var player1 = new Player();
-var player2 = new Player();
-
-Player.prototype.rollDice = function(){
+PigDice.prototype.rollDice = function(){
 var dice = Math.floor(Math.random()*6)+1;
-this.rollScore=dice;
-this.roundScore += this.rollScore;
-/*if(dice !== 1){
+this.rollScore=dice; 
+if(dice !== 1){
     this.roundScore += this.rollScore;
 }else{
     this.roundScore = 0;
-    $("#rollDice").prop("disabled", true); 
+    /*$("#rollDice").prop("disabled", true);*/
     }  
-}*/
-
-Player.prototype.holdDice = function(){
-this.totalScore += this.roundScore;
 }
 
+PigDice.prototype.holdDice = function(){
+this.totalScore += this.roundScore;
 /*$("#rollDice").prop("disabled", true);*/
+}

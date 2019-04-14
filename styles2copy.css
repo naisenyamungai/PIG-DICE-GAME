@@ -63,26 +63,28 @@ body{
     background-repeat: no-repeat;
     height:400px;
 }
-.scoreSheet{
+/*.scoreSheet{
     grid-column: span 3 / auto;
-}
+}*/
 
 .footer{
     grid-column: span 3 / auto;
     height:300px;
 }
 
-.Game{
+.newGame{
     grid-column: span 3 / auto;
     background:rgba(0,0,0,0.5);
     height:100px;
 }
-#newgame h3:hover{
+
+
+#newGame h3:hover{
     color:rgb(255,223,0);
 }
 
-#newgame{
-    margin-left:80%;
+#newGame{
+    margin-left:42%;
     width:200px;
     height:100px;
     background-color:rgba(0,0,0,0.0001);
