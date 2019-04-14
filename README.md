@@ -1,5 +1,5 @@
 ## Project Name
-           ANITA'S KITCHEN
+           PIG DICE GAME
 
 ## Author
             [Naisenya Mungai](https://github.com/naisenyamungai)
@@ -7,9 +7,19 @@
 
 
 ## Project Description
-> This is a program  that creates a Restaurant Website that share's information with the user on the menu and allows users to subscribe to newsletters 
+> A pig dice game to be played by 2 people. 
 
 ## Project Overview
+
+| Behavior        | Input           | Outcome  |
+| ------------- |:-------------:| -----:|
+| Player 1 inputs name and Player 2 inputs name, and clicks start button | Player 1:  / Player 2:  / Click START | Goes to game console |
+| Player 1 clicks ROLL button | Click ROLL button | Dice rolls and number is generated
+| If Player 1 rolls any number other than 1, that roll is added to round total | Roll = 2 | Round total = 2 |
+| If Player 1 rolls a 1, no score is added and round for Player 1 ends | Roll = 1 | Round total = 2 / Total score = 2 / Player 2 begins |
+| Repeat for Player 2 | Roll = 1 | Round total = 0 / Total score = 0 / Player 1 begins |
+| When a player's total score reaches 100 or more, game ends and winner page shows | Player 1 total score = 100 | Winner page |
+
 
 ## Technologies Used
 >The application was created using below technologies;
@@ -20,7 +30,7 @@
 >- JQuery
 
 ## Known Bugs
-> None
+> No known Bugs at the moment
 
 ## SetUp Instructions
 > Internet Connection is required for the following instructions to be executed
@@ -42,13 +52,12 @@
 >- The first player to reach 100 points wins the game
 
 
-
 ## Support and contact details
 > naisenyamungai@gmail.com
 
 
 ## To access this webpage open below link
-> https://naisenyamungai.github.io/Anita-s-Kitchen/
+> https://naisenyamungai.github.io/PIG-DICE-GAME/
 
 
 ## [License](https://naisenyamungai.github.io/naisenyaPortfolio/LICENSE.md)
