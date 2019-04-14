@@ -7,7 +7,7 @@
 
 
 ## Project Description
-> A pig dice game to be played by 2 people. 
+> A pig dice game to be played by 2 people. Find out more once you play!
 
 ## Project Overview
 
@@ -42,6 +42,7 @@
 >- Play the game and enjoy
 >- For any feedback on bugs and errors contact naisenyamungai@gmail.com or 0721635386.
 >- Alternatively you can clone the project onto your local machine to have a sneak peak at the code used.
+
 
 > Rules of the game:
 >- The game has 2 players, playing in rounds.
