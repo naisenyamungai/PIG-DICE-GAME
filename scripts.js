@@ -17,31 +17,59 @@ function closeNav() {
 
 $(document).ready(function() {
   var p1 = new PigDice();
+  $("#player1").click(function(){
+    $("#rollDice").click(function() { 
+      p1.rollDice();
+      $("#p1rollScore").text(p1.rollScore);
+      $("#p1roundScore").text(p1.roundScore);
+    });
+    $("#hold").click(function() {
+      p1.holdDice();
+      $("#p1totalScore").text(p1.totalScore);
+    });
+  });
+});
+/*
   $("#rollDice").click(function() { 
       p1.rollDice();
-      $("#rollScore").text(p1.rollScore);
-      $("#roundScore").text(p1.roundScore);
+      $("#p1rollScore").text(p1.rollScore);
+      $("#p1roundScore").text(p1.roundScore);
 
   });
   $("#hold").click(function() {
       p1.holdDice();
-      $("#totalScore").text(p1.totalScore);
+      $("#p1totalScore").text(p1.totalScore);
      
+  });*/
+
+
+$(document).ready(function() {
+  var p2 = new PigDice();
+  $("#player2").click(function(){
+    $("#rollDice").click(function() { 
+      p2.rollDice();
+      $("#p2rollScore").text(p2.rollScore);
+      $("#p2roundScore").text(p2.roundScore);
+    });
+    $("#hold").click(function() {
+      p2.holdDice();
+      $("#p2totalScore").text(p2.totalScore);
+    });
   });
 });
 
-/*$(document).ready(function() {
-var p2 = new PigDice();
+
+/*
 $("#rollDice").click(function() { 
     p2.rollDice();
-    $("#rollScore").text(p2.rollScore);
-    $("#roundScore").text(p2.roundScore);
+    $("#p2rollScore").text(p2.rollScore);
+    $("#p2roundScore").text(p2.roundScore);
 });
 $("#hold").click(function() {
     p2.holdDice();
-    $("#totalScore").text(p2.totalScore);
-    $("#rollDice").prop("disabled", true); 
-});
+    $("#p2totalScore").text(p2.totalScore);
+    $("#p2rollDice").prop("disabled", true); 
+  });
 });*/
 
 /* Business Logic */
@@ -51,6 +79,7 @@ this.roundScore =0;
 this.totalScore =0;
 }
 
+
 PigDice.prototype.rollDice = function(){
 var dice = Math.floor(Math.random()*6)+1;
 this.rollScore=dice; 
@@ -58,24 +87,30 @@ if(dice !== 1){
     this.roundScore += this.rollScore;
 }else{
     this.roundScore = 0;
-    $("#rollDice").prop("disabled", true); 
+    $("#rollDice").prop("disabled", true);
+    $("#hold").prop("disabled", true);
     }  
 }
 
 PigDice.prototype.holdDice = function(){
 this.totalScore += this.roundScore;
 $("#rollDice").prop("disabled", true);
+$("#hold").prop("disabled", true);
 }
 
+function nextPlayer(){
+  if(p1.holdDice){
 
-function nextPlayer() {
+  }
+}
+/*function nextPlayer() {
 	//next player
 		var icons = document.getElementsByTagName('i');
 		for(i=0;i<icons.length;i++){
 			icons[i].classList.remove(Player1);
 		}
 		
-		Plaayer1 ===0 ? activePlayer = 1 : activePlayer = 0;
+		Player1 ===0 ? activePlayer = 1 : activePlayer = 0;
 		roundScore = 0;
 		
 		for(i=0;i<icons.length;i++){
@@ -84,4 +119,4 @@ function nextPlayer() {
 		document.querySelector('.player-' + activePlayer + '-panel').classList.add('active-' + activePlayer);
 		document.querySelector('#current-0').textContent = '0';
 		document.querySelector('#current-1').textContent = '0';
-}
+}*/
