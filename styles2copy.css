@@ -404,17 +404,17 @@ body{
 .content-carrousel figure:nth-child(1) {
 	transform: rotateY(0deg) translateZ(300px); 
 } .content-carrousel figure:nth-child(2) {
-	transform: rotateY(40deg) translateZ(300px); 
+	transform: rotateY(60deg) translateZ(300px); 
 } .content-carrousel figure:nth-child(3) {
-	transform: rotateY(80deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(4) {
 	transform: rotateY(120deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(4) {
+	transform: rotateY(180deg) translateZ(300px); 
 } .content-carrousel figure:nth-child(5) {
-	transform: rotateY(160deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(6) {
-	transform: rotateY(200deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(7) {
 	transform: rotateY(240deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(6) {
+	transform: rotateY(300deg) translateZ(300px); 
+} .content-carrousel figure:nth-child(7) {
+	transform: rotateY(360deg) translateZ(300px); 
 }
 
 .shadow {
